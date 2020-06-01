@@ -2,27 +2,36 @@ package com.codecool.tinkertailor;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 class TinkerTailor {
 
     int n, k;
+    private List<Integer> numbers = new ArrayList<Integer>();
 
     public TinkerTailor(int n, int k) {
+        Random rand = new Random();
         this.n = n;
         this.k = k;
+        for (int i = 1; i <= n ; i++) {
+            numbers.add(rand.nextInt(50));
+        }
+        System.out.println(numbers);
     }
 
     public List execute() {
         List<Integer> outcome = new ArrayList<>();
 
-        outcome.add(3);
-        outcome.add(1);
-        outcome.add(5);
-        outcome.add(2);
-        outcome.add(4);
-
-        // Works for n = 5 and k = 3
-        // Well, you should come up with a more general algorithm :)
+        if (outcome.size() == n) {
+            System.out.println(outcome);
+        } else {
+            for ( int j=0; j< k; j++) {
+                numbers.add(numbers.get(0));
+                numbers.remove(0);
+            }
+            outcome.add(numbers.get(0));
+            numbers.remove(0);
+        }
 
         return outcome;
     }
