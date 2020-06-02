@@ -10,27 +10,26 @@ class TinkerTailor {
     private List<Integer> numbers = new ArrayList<Integer>();
 
     public TinkerTailor(int n, int k) {
-        Random rand = new Random();
         this.n = n;
         this.k = k;
-        for (int i = 1; i <= n ; i++) {
-            numbers.add(rand.nextInt(50));
-        }
-        System.out.println(numbers);
     }
 
     public List execute() {
         List<Integer> outcome = new ArrayList<>();
+        for (int i = 1; i <= n ; i++) {
+            numbers.add(i);
+        }
+        System.out.println(numbers);
 
         if (outcome.size() == n) {
             System.out.println(outcome);
         } else {
             for ( int j=0; j< k; j++) {
-                numbers.add(numbers.get(0));
+                outcome.add(numbers.get(0));
                 numbers.remove(0);
+
             }
             outcome.add(numbers.get(0));
-            numbers.remove(0);
         }
 
         return outcome;
