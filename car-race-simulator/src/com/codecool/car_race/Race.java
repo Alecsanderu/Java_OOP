@@ -43,8 +43,8 @@ public class Race {
         for (int i = 1; i <= laps; i++) {
             int rainDecision = generateRandom.generateRandomNumber(1, 60);
             System.out.println(" For This Lap(Lap NO. " + i + ") there are  " + rainDecision + " % chances of rain");
-            if (rainDecision >= raining) {setRaining(true);}
-            if (getIsRaining()){
+            if (rainDecision >= raining) {
+                setRaining(true);
                 System.out.println("Raining");
             } else  {
                 System.out.println("Sun is up");
