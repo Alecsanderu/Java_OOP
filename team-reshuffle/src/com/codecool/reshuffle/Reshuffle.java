@@ -37,7 +37,7 @@ public class Reshuffle {
         }
     }
 
-    public void reShuffleTeam(String fileName) {
+    public void reShuffleTeam() {
         Team newteam = new Team();
         List<String> members = new ArrayList<>();
         for (int i=0; i<4; i++) {
@@ -72,7 +72,7 @@ public class Reshuffle {
         reshuffle.loadOldTeams("resources/teams_sample.txt");
         reshuffle.printOldTeams();
         reshuffle.letsRoll();
-        reshuffle.reShuffleTeam("resources/teams_sample.txt");
+        reshuffle.reShuffleTeam();
         reshuffle.printNewTeams();
     }
 
