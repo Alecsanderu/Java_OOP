@@ -5,18 +5,23 @@ import java.util.Currency;
 import java.util.List;
 
 public class Product {
-    int id;
-    String name;
-    float defaultPrice;
-    Currency defaultCurrency;
-    ProductCategory productCategory;
-    Supplier supplier;
+    private static int id = 0;
+    private String name;
+    private float defaultPrice;
+    private Currency defaultCurrency;
+    private ProductCategory productCategory;
+    private Supplier supplier;
 
 
 
     public void Product() {};
 
-    public void Product(String name, float defaultPrice, Currency defaultCurrency){};
+    public void Product(String name, float defaultPrice, Currency defaultCurrency){
+        id++;
+        this.name = name;
+        this.defaultPrice = defaultPrice;
+        this.defaultCurrency = defaultCurrency;
+    };
 
     public  int getId(){
         return id;
