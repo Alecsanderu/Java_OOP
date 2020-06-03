@@ -7,8 +7,6 @@ import java.util.Random;
 class TinkerTailor {
 
     int n, k;
-    private List<Integer> numbers = new ArrayList<Integer>();
-
     public TinkerTailor(int n, int k) {
         this.n = n;
         this.k = k;
