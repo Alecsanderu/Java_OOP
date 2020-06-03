@@ -15,23 +15,20 @@ class TinkerTailor {
     }
 
     public List execute() {
+        List<Integer> start = new ArrayList<>();
         List<Integer> outcome = new ArrayList<>();
-        for (int i = 1; i <= n ; i++) {
-            numbers.add(i);
-        }
-        System.out.println(numbers);
+        int position = 0;
 
-        if (outcome.size() == n) {
-            System.out.println(outcome);
-        } else {
-            for ( int j=0; j< k; j++) {
-                outcome.add(numbers.get(0));
-                numbers.remove(0);
-
-            }
-            outcome.add(numbers.get(0));
+        for (int i=1; i<=n; i++) {
+            start.add(i);
         }
 
+        for (int j=0;j<n-1;j++){
+            position = (position+k-1)%start.size();
+            outcome.add(start.get(position));
+            start.remove(position);
+        }
+        outcome.add(start.get(0));
         return outcome;
     }
 }
