@@ -28,18 +28,21 @@ public class Drones extends Ant {
         }
         if (queenIsNear() && queen.getInTheMood()) {
             System.out.println("HALLELUJAH");
-            setyPos(queen.getyPos() - r.nextInt(51) + 50);
-            setxPos(queen.getxPos() - r.nextInt(51) + 50);
+            castDroneAway(queen);
         } else if (queenIsNear() && !queen.getInTheMood()) {
             System.out.println("D'oh");
-            setyPos(queen.getyPos() - r.nextInt(51) + 50);
-            setxPos(queen.getxPos() - r.nextInt(51) + 50);
+            castDroneAway(queen);
         }
     }
 
 
     public boolean queenIsNear() {
         return Math.abs(getxPos()) + Math.abs(getyPos()) <= 47;
+    }
+
+    public void castDroneAway(Queen queen){
+        setyPos(queen.getyPos() - r.nextInt(51) + 50);
+        setxPos(queen.getxPos() - r.nextInt(51) + 50);
     }
 
     @Override
