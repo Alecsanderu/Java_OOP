@@ -15,13 +15,12 @@ public class Army {
         }
     }
 
-    public void step() throws InterruptedException {
+    public void move() throws InterruptedException {
         for (Ant ant : Ants) {
             if (ant instanceof Drones) {
                 ((Drones) ant).move(getQueen());
             } else {
                 ant.move();
-
             }
         }
         queen.move();

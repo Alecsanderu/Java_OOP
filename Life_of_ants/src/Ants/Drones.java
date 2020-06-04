@@ -13,6 +13,8 @@ public class Drones extends Ant {
         setyPos(y);
     }
 
+    @Override
+    public void move() {}
 
     public void move(Queen queen) {
         if (getxPos() < 50) {
@@ -45,6 +47,5 @@ public class Drones extends Ant {
         setxPos(queen.getxPos() - r.nextInt(51) + 50);
     }
 
-    @Override
-    public void move() {}
+
 }

@@ -6,7 +6,7 @@ public class Main {
 	// write your code here
         Army ants = new Army();
         for (int i = 0; i <100 ; i++) {
-            ants.step();
+            ants.move();
         }
 
     }
