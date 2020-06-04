@@ -8,7 +8,8 @@ public class Truck extends Vehicles{
     private int name;
     private int normalSpeed;
     private int breakChance = 5;
-    public int distanceTraveled;
+    private int distanceTraveled;
+    private int lapsToWait = 0;
     String vehicleType;
 
 
@@ -27,6 +28,10 @@ public class Truck extends Vehicles{
     public void prepareForLap() {
         int breakDown = generateRandom.generateRandomNumber(1, 101);
         if (breakDown <= breakChance) {
+            lapsToWait = 2;
+        }
+        if (lapsToWait > 0 ) {
+            lapsToWait--;
             normalSpeed = 0;
             Race.setIsYellowFagActive(true);
         } else {
