@@ -39,7 +39,7 @@ public class Drones extends Ant {
 
 
     public boolean queenIsNear() {
-        return Math.abs(getxPos()) + Math.abs(getyPos()) <= 47;
+        return getxPos() <= 47 && getyPos() <= 47;
     }
 
     public void castDroneAway(Queen queen){
