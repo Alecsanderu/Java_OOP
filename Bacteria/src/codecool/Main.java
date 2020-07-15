@@ -23,9 +23,7 @@ public class Main {
         piriDish.multiply(500);
 
 
-        piriDish.getBacteries().entrySet().forEach(entry->{
-            System.out.println(entry.getKey().getType() + " " + entry.getValue());
-        });
+
 
 
 

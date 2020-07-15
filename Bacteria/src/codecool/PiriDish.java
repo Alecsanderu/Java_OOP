@@ -34,6 +34,9 @@ public class PiriDish{
 					bacteries.put(bacteria, bacteries.get(bacteria) + 2);
 				}
 			}
+			bacteries.entrySet().forEach(entry->{
+				System.out.println(entry.getKey().getType() + " " + entry.getValue());
+			});
 		}
 	}
 
