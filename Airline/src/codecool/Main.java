@@ -31,9 +31,9 @@ public class Main {
 		}
 
 
-		FlightAttendant flightAttendantOne = new FlightAttendant("Jane Doe1", "0729622232",new Date(1977-5-3), 3000);
-		FlightAttendant flightAttendantTwo = new FlightAttendant("Janet Doe2","0729354633", new Date(1989-12-13),  2800);
-		FlightAttendant flightAttendantThree = new FlightAttendant("Joanna Doe3", "0729697534", new Date(1992-6-23),  3200);
+		FlightAttendant flightAttendantOne = new FlightAttendant("Silviu", "0745321321",new Date(1977-5-3), 3000);
+		FlightAttendant flightAttendantTwo = new FlightAttendant("Tudor","0754123123", new Date(1989-12-13),  2800);
+		FlightAttendant flightAttendantThree = new FlightAttendant("Bogdan", "0712321321", new Date(1992-6-23),  3200);
 
 		firstOne.addAttendants(flightAttendantOne);
 		firstOne.addAttendants(flightAttendantTwo);
