@@ -14,6 +14,7 @@ public class Main {
 		Flight firstOne = new Flight();
 
 		System.out.println("Getting Ready");
+		System.out.println("Flight ID: " + firstOne.getId());
 		System.out.println("Flight Language is " + firstOne.getLanguage());
 
 		Pilot pilot1 = new Pilot("Alex", "0785423123",new Date(1987-7-3), 2000, Pilot.Position.PILOT );

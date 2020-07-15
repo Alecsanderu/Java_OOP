@@ -48,6 +48,10 @@ public class Flight {
         }
     }
 
+    public int getId() {
+        return id;
+    }
+
     public boolean checkLanguage () {
        return flightAttendants.stream()
                 .allMatch(flightAttendant -> flightAttendant.getLanguage() == language || flightAttendant.getLanguage2() == language);
