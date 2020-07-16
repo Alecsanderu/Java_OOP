@@ -18,19 +18,19 @@ public class Bacillus extends Bacteria {
 	}
 
 	@Override
-	public boolean checkNearbyBacteria(Map<Bacteria, Integer> bacteries) {
+	public boolean checkNearbyBacteria(List<Bacteria> bacteriesList) {
 		List<Bacteria> nearbyBacteries = new ArrayList<>();
-		for (Bacteria bacteria : bacteries.keySet()){
+		for (Bacteria bacteria : bacteriesList){
 			int currentBacteria = Math.abs(bacteria.getPosX() - getPosX()) +
 					              Math.abs(bacteria.getPosY() - getPosY());
 			if (currentBacteria <= getNEARBY()){
 				nearbyBacteries.add(bacteria);
 			}
 		}
-		nearbyBacteries.stream()
-				.filter(bacteria -> bacteria.getType() == BacteriaTypes.Coccus)
-				.collect(Collectors.toList());
+		 List<Bacteria> filtered = nearbyBacteries.stream()
+						.filter(bacteria -> bacteria.getType() == BacteriaTypes.Coccus)
+						.collect(Collectors.toList());
 
-		return nearbyBacteries.size() >= 1;
+		return filtered.size() >= 1;
 	}
 }

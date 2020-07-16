@@ -2,7 +2,6 @@ package codecool.bacterias;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Coccus extends Bacteria {
@@ -15,23 +14,24 @@ public class Coccus extends Bacteria {
 		this.NEARBY = 1;
 	}
 
+
 	@Override
-	public boolean checkNearbyBacteria(Map<Bacteria, Integer> bacteries) {
+	public boolean checkNearbyBacteria(List<Bacteria> bacteriesList) {
 		List<Bacteria> nearbyBacteries = new ArrayList<>();
-		for (Bacteria bacteria : bacteries.keySet()){
+		for (Bacteria bacteria : bacteriesList){
 			int currentBacteria = Math.abs(bacteria.getPosX() - getPosX()) +
 					Math.abs(bacteria.getPosY() - getPosY());
 			if (currentBacteria <= getNEARBY()){
 				nearbyBacteries.add(bacteria);
 			}
 		}
-		nearbyBacteries.stream()
+		List<Bacteria> filtered = nearbyBacteries.stream()
 				.filter(bacteria -> bacteria.getType() == BacteriaTypes.Spirillum
 				&& bacteria.getType() == BacteriaTypes.Bacillus)
 				.collect(Collectors.toList());
 
 
-		return nearbyBacteries.size() >= 2;
+		return filtered.size() >= 2;
 
 	}
 }

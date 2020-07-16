@@ -19,12 +19,9 @@ public class Main {
         piriDish.addBacteries(coccus1);
         piriDish.addBacteries(bacillus1);
 
-
-        piriDish.multiply(500);
-
-
-
-
+        for (int i = 0; i < 100 ; i++) {
+            piriDish.multiply();
+        }
 
 
     }
